@@ -6,70 +6,44 @@
 
     function active()
     {
-        var currentUrl = window.location.pathname;
-        console.log(currentUrl);
-       /* $('.nav > li').each(function(i)
-        {
-            $this = $(this);
-            if($this.children('.dropdown-menu').length == 1)
-            {
-               console.log('Yes'); 
-            }
-            else
-            {
-                console.log($this.children('a').attr('href'));
-            }
-            console.log( ($this.children('.dropdown-menu').length == 1));
-        }
-        );*/
+        var currentUrl = window.location.pathname;        
 
         //Remove href attributes from anchor tags with sibling that class of dropmenu
         $('.nav li').each(function()
         {
-            //console.log($(this));
             $this = $(this);
-            //console.log($this.children(".dropdown-menu").length);
-            if($this.children(".dropdown-menu").length > 0)
+            if($this.children(".dropdown-menu").length > 0) //Check if has child with class name of dropdown-menu
             {
-                //console.log('yes');
-                $this.children('a').removeAttr('href');
+                $this.children('a').removeAttr('href');// Remove href
             }
-            /*else
-            {
-                //console.log('no');
-            }
-            console.log("");*/
         });
 
 
-        if(currentUrl == '/wifi-wimax-lte/')
-        {
-            currentUrl='/wifi-wimax-lte/index.php';
+        if(currentUrl == '/portfolio-15-05-2017/wifi-wimax-lte/')
+        { 
+            currentUrl='/portfolio-15-05-2017/wifi-wimax-lte/index.php';
         }
 
-        console.log('');
-        console.log(currentUrl);
         $('.nav a').each(function()
         {
-            let attr = $(this).attr('href');
+            $this = $(this);
+            let attr = $this.attr('href');
 
             if (typeof attr !== typeof undefined && attr !== false && attr !== '#') 
             {// Element has this attribute
-                console.log($(this).attr('href'));
-                if($(this).attr('href') == '/wifi-wimax-lte')
+                console.log($this.attr('href'));
+                if($this.attr('href') == '/portfolio-15-05-2017/wifi-wimax-lte')
                 {
-                  $(this).attr('href','/wifi-wimax-lte/index.php');
-                  console.log($(this).attr('href'));
+                  $this.attr('href','/portfolio-15-05-2017/wifi-wimax-lte/index.php');
+                  console.log($this.attr('href'));
                   console.log('');
                 }
 
-                if(currentUrl == $(this).attr('href'))
+                if(currentUrl == $this.attr('href'))
                 {
                     console.log('match');
-                    //console/log()
-                    $(this).parent('li').addClass('active');
+                    $this.parent('li').addClass('active');
                 }
-
             }
         });
     }
