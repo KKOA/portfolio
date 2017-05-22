@@ -1,7 +1,7 @@
 <?php 
 
 //root directory
-defined('ROOTFLD') ? null : define("ROOTFLD", '');
+defined('ROOTFLD') ? null : define("ROOTFLD", '/portfolio-15-05-2017');
 
 //Wifi-WiMAX-LTE directory
 defined('WIFIWIMAXLTEFLD') ? null : define("WIFIWIMAXLTEFLD", ROOTFLD.'/wifi-wimax-lte');
