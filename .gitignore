@@ -1,0 +1,5 @@
+# Logs & database
+includes/dbconfig.php
+*.log
+
+*.docx
