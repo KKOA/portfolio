@@ -14,11 +14,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">-->
-    <link rel="stylesheet" href="../stylesheets/vendor/app.css">
+    <link rel="stylesheet" href="../styles/css/vendors/bootstrap/app.css">
     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
-    <link rel="stylesheet" href="../stylesheets/vendor/font-awesome.css">
+    <link rel="stylesheet" href="../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" href="../stylesheets/mystyleV4.css">
+    <link rel="stylesheet" href="../styles/css/mystyleV4.css">
     
 </head>
 <body>
@@ -140,7 +140,7 @@
     </script>
     <?php /* Load Bootstrap Javascript Library (Require JQuery to Load first) */ ?>
     <!--<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
-    <script src="../js/vendor/bootstrap.min.js"></script>
+    <script src="../js/vendors/bootstrap.min.js"></script>
     <script src="../js/myscriptV2.js"></script>
     <script src='../js/vendor/modernizr-custom.js'></script>
     <script src='../js/Another.js'></script>
