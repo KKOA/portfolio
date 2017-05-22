@@ -101,7 +101,7 @@
                 beforeSend: function(){
                     $('article').find('#box > a').hide();
                     let =loading ='<div class="img-responsive">';
-                    loading += '<img src="../../img/spinner.gif">';
+                    loading += '<img src="../../imgs/spinner.gif">';
                     loading +='</div>';
                     $('article').find('#box').append(loading);
                 }
