@@ -134,7 +134,7 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript">
         if (typeof jQuery == 'undefined') {
-            document.write(unescape("%3Cscript src='js/vendor/jquery-3.2.1.js' type='text/javascript'%3E%3C/script%3E"));
+            document.write(unescape("%3Cscript src='../js/vendor/jquery-3.2.1.js' type='text/javascript'%3E%3C/script%3E"));
         }
 
     </script>
@@ -142,7 +142,7 @@
     <!--<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
     <script src="../js/vendors/bootstrap.min.js"></script>
     <script src="../js/myscriptV2.js"></script>
-    <script src='../js/vendor/modernizr-custom.js'></script>
+    <script src='../js/vendors/modernizr-custom.js'></script>
     <script src='../js/Another.js'></script>
     
     
