@@ -148,7 +148,7 @@ $title = 'Quiz Result';
     <?php /* Load Bootstrap Javascript Library (Require JQuery to Load first) */ ?>
     <!--<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
     <script src="../../js/vendors/bootstrap.min.js"></script>
-    <script src="../../js/myscriptV2.js"></script>
+    <script src="../../js/myscript.js"></script>
     <script src='../../js/vendors/modernizr-custom.js'></script>
     
 </body>
