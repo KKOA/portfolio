@@ -38,8 +38,6 @@ $(document).ready(function()
        });
     });
     
-    
-    //
     //Hide bottom > a link 
     $("#bottom > a").css('visibility','hidden');
 
