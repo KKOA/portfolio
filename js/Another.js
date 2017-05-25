@@ -46,6 +46,14 @@
                 }
             }
         });
+        
+        
+        //Disable active link
+        $(".active").on('click','a',function(event)
+        {
+            //event.preventDefault();
+            return false;
+        });
     }
         
     
