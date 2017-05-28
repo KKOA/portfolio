@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="../../styles/css/vendors/bootstrap/app.css">
     <link rel="stylesheet" href="../../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/css/mystyleV4.css">
+    <link rel="stylesheet" href="../../styles/css/mystyle.css">
     <link rel="stylesheet" href="../../styles/css/quiz.css">
     
 </head>
@@ -44,7 +44,7 @@
                 Only one question will appear at any time.Use next button and previous button to navigate the quiz.</p>
 
                 <div id="box" class="shadow">
-                    <a href="quizFormV2.php" id="startQuiz" class="btn btn-default btn-lg">Start Quiz</a>
+                    <a href="quizForm.php" id="startQuiz" class="btn btn-default btn-lg">Start Quiz</a>
                 </div> 
                 
             </div>
@@ -84,7 +84,10 @@
                 success : function(response){
                    
                    $('article').find('#box').find('.img-responsive').fadeOut(800,function(){
-                     $('article').find('#box').html(response).fadeIn(8000);  
+                       $('div#box').css('background-color','transparent');
+                       $('div#box').css('border','none');
+                       $('article').find('#box').html(response).fadeIn(8000);
+                       $('.questions').css('border','none');
                    });
                    
                 },
