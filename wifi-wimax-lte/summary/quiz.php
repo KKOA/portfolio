@@ -13,13 +13,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="../../styles/css/vendors/bootstrap/app.css">
     <link rel="stylesheet" href="../../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/css/mystyle.css">
     <link rel="stylesheet" href="../../styles/css/quiz.css">
-    
+
 </head>
 <body>
 <div class="wrapper">
@@ -44,14 +44,14 @@
                 Only one question will appear at any time.Use next button and previous button to navigate the quiz.</p>
 
                 <div id="box" class="shadow">
-                    <a href="quizForm.php" id="startQuiz" class="btn btn-default btn-lg">Start Quiz</a>
-                </div> 
-                
+                    <a href="quiz-Form.php" id="startQuiz" class="btn btn-default btn-lg">Start Quiz</a>
+                </div>
+
             </div>
             <footer class="articleFooter" style="padding:10px 0;">
-                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p> 
-            </footer> 
-            
+                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p>
+            </footer>
+
         </article>
         <div id="bottom" class="text-center">
             <a href="#Top" title="Navigate to top of the current page">
@@ -80,26 +80,26 @@
     <script>
         $('article').on('click', '#startQuiz',function(event){
             event.preventDefault();
-            $.ajax('quizFormV2.php',{
+            $.ajax('quiz-Form-Ajax.php',{
                 success : function(response){
-                   
+
                    $('article').find('#box').find('.img-responsive').fadeOut(800,function(){
                        $('div#box').css('background-color','transparent');
                        $('div#box').css('border','none');
                        $('article').find('#box').html(response).fadeIn(8000);
                        $('.questions').css('border','none');
                    });
-                   
+
                 },
                 error: function(request, errorType, errorMessage)
                 {
                     let message = '<h1 class="text-center">Connection Failed</h1>';
                     message += '<h3 class="text-center"> Please try again later.</h3>';
                     $('article').find('#box').find('.img-responsive').fadeOut(800,function(){
-                        $('article').find('#box').html(message).fadeIn(8000); 
+                        $('article').find('#box').html(message).fadeIn(8000);
                     });
 
-                        
+
                 },
                 beforeSend: function(){
                     $('article').find('#box > a').hide();
@@ -108,13 +108,13 @@
                     loading +='</div>';
                     $('article').find('#box').append(loading);
                 }
-               
-                
-           }); 
+
+
+           });
         });
     </script>
     <script src='../../js/Another.js'></script>
-    
-    
+
+
 </body>
 </html>

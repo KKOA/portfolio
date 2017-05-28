@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once("../../includes/config.php");
 require_once("../../includes/quizdb.php");
 ?>
@@ -40,7 +40,7 @@ $totalQuestion = count($questions);
 */
 ?>
 
-<form action="quiz_result.php" method="post" id="quizForm">
+<form action="quiz-result.php" method="post" id="quizForm">
 <?php
 for($qid=0;$qid < count($questions);$qid++)
 {
@@ -54,11 +54,11 @@ for($qid=0;$qid < count($questions);$qid++)
             $questiondiv .= "<h3>".$questions[$qid][$j]."</h3>";
             $questiondiv .= "<input type='hidden' name='question".$qid."_text'  value='".$questions[$qid][$j]."'>";
             $questiondiv .= "</div>";
-            echo $questiondiv;         
+            echo $questiondiv;
         }
         elseif($j == 1)
         {
-            
+
             $answerdiv ="<div class='answers'>";
             for($aid=0;$aid < count($questions[$qid][$j]);$aid++)
             {
@@ -66,8 +66,8 @@ for($qid=0;$qid < count($questions);$qid++)
                 $answerdiv .=  $questions[$qid][$j][$aid].'<br>';
             }
             $answerdiv .= "</div>";
-                
-            echo  $answerdiv;   
+
+            echo  $answerdiv;
         }
      }
      echo'</div>';
@@ -86,4 +86,3 @@ for($qid=0;$qid < count($questions);$qid++)
 </div>
 </form>
 <script src="../../js/question.js"></script>
-               

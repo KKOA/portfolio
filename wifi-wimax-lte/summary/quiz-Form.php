@@ -1,4 +1,4 @@
-<?php 
+<?php
 include_once("../../includes/config.php");
 require_once("../../includes/quizdb.php");
 $title = 'Quiz';
@@ -15,13 +15,13 @@ $title = 'Quiz';
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+
     <link rel="stylesheet" href="../../styles/css/vendors/bootstrap/app.css">
     <link rel="stylesheet" href="../../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/css/mystyle.css">
     <link rel="stylesheet" href="../../styles/css/quiz.css">
-    
+
 </head>
 <body>
 <div class="wrapper">
@@ -45,7 +45,7 @@ $title = 'Quiz';
                 <p><b>(JavaScript enable user Only)</b><br>
                 Only one question will appear at any time.Use next button and previous button to navigate the quiz.</p>
                <div id="box" class="shadow">
-                <form action="quiz_result.php" method="post" id="quizForm">
+                <form action="quiz-result.php" method="post" id="quizForm">
                 <?php
                 for($qid=0;$qid < count($questions);$qid++)
                 {
@@ -59,7 +59,7 @@ $title = 'Quiz';
                             $questiondiv .= "<h3>".$questions[$qid][$j]."</h3>";
                             $questiondiv .= "<input type='hidden' name='question".$qid."_text'  value='".$questions[$qid][$j]."'>";
                             $questiondiv .= "</div>";
-                            echo $questiondiv;         
+                            echo $questiondiv;
                         }
                         elseif($j == 1)
                         {
@@ -72,7 +72,7 @@ $title = 'Quiz';
                             }
                             $answerdiv .= "</div>";
 
-                            echo  $answerdiv;   
+                            echo  $answerdiv;
                         }
                      }
                      echo'</div>';
@@ -94,9 +94,9 @@ $title = 'Quiz';
                 <!-- -->
                 </div>
             <footer class="articleFooter" style="padding:10px 0;">
-                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p> 
-            </footer> 
-            
+                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p>
+            </footer>
+
         </article>
         <div id="bottom" class="text-center">
             <a href="#Top" title="Navigate to top of the current page">
@@ -126,4 +126,3 @@ $title = 'Quiz';
     <script src="../../js/question.js"></script>
 </body>
 </html>
-               
