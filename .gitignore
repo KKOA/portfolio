@@ -6,4 +6,6 @@ includes/dbconfig.php
 
 *.docx
 
+styles/css/*.pdf
+
 
