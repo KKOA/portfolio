@@ -1,5 +1,6 @@
 <?php 
 include_once("../../includes/config.php");
+require_once("../../includes/quizdb.php");
 ?>
 
 <?php
@@ -8,7 +9,7 @@ Description : Retrieve list of question, possible answer and correct answer from
 Author : Keith Amoah
 Date : 03/11/2016
 */
-
+/*
 //Declare $question array
 $questions =[];
 
@@ -36,7 +37,7 @@ mysqli_close($conn);// Close Database Connection
 
 //Number of Questions
 $totalQuestion = count($questions);
-
+*/
 ?>
 
 <form action="quiz_result.php" method="post" id="quizForm">

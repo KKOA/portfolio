@@ -7,35 +7,7 @@ $keword;
 $summary ='';
 $correctAnswers =0;
 $totalQuestion = 0;
-
-//Declare $question array
-$questions =[];
-
-$conn=mysqli_connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
-// Check connection
-if (mysqli_connect_errno())
-{
-  echo "Failed to connect to MySQL: " . mysqli_connect_error();
-}
-
-$sql="SELECT * FROM quiz ORDER BY question_Id";
-
-if ($result=mysqli_query($conn,$sql))
-{
-
-  while ($row=mysqli_fetch_row($result))// Fetch one and one row
-  {
-      $questions [] = array($row[1],explode(",",$row[2]),$row[3]);// Assign to global array
-  }
-
-  mysqli_free_result($result);// Free result set
-}
-
-mysqli_close($conn);// Close Database Connection
-
-//Number of Questions
-$totalQuestion = count($questions);
-
+require_once("../../includes/quizdb.php");
 
 $summary ='';
 for ($i=0; $i <$totalQuestion;$i++)// Rename $i variable
@@ -90,7 +62,7 @@ $title = 'Quiz Result';
     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="../../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link rel="stylesheet" href="../../styles/css/mystyleV4.css">
+    <link rel="stylesheet" href="../../styles/css/mystyle.css">
     
 </head>
 <body>
