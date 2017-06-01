@@ -167,13 +167,15 @@
         }
 
 
-        .buttons button
+        .buttons button,
+        .buttons input[type=submit]
         {
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
             border-width:5px;
             border-color:#000;
         }
-        .buttons button:hover
+        .buttons button:hover,
+        .buttons input[type=submit]
         {
             border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
             border-width:5px;
