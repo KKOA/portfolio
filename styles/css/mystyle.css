@@ -191,6 +191,7 @@
     .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover*/
 
     .navbar-inverse  .navbar-nav > .active > a,
+    .navbar-inverse  .navbar-nav > .active > a:hover,
     .navbar-inverse .navbar-collapse .navbar-nav > .active.open > a
     .navbar-inverse .navbar-collapse .navbar-nav > .active > a:hover,
     .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
@@ -279,6 +280,11 @@
         background:#ddd;
     }
 
+    .navbar-nav .active a:hover
+    {
+            cursor: not-allowed; /* When hover over link for current page not allowed symbol is displayed */
+    }
+
     /* Sub level */
 
     .dropdown-menu
@@ -316,12 +322,6 @@
     {
         background-color:#aaa;
         color:#fff;
-    }
-    .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover
-    {
-            /*background-color: #337ab7;*/
-            cursor: not-allowed;
-            /*color:#fff;*/
     }
 
     @media(min-width:768px)
@@ -483,8 +483,6 @@
         position: absolute;
         bottom:0;
         right:0;
-        /*border-right:#fff 30px solid;
-        border-top:#8c8a6c 30px solid;  */
     }
 
     .fold:after
