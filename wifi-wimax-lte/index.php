@@ -61,21 +61,21 @@
                         </p>
                         <ol id="topics">
                             <li>
-                                <a href="#" title="View Principles of Digital communications">
+                                <a href="#" title="View Principles of Digital communications topics">
                                     Principles of Digital communications
                                 </a>
                             </li>
                             <li>
-                                <a href="#" title="Wi-Fi">Wi-Fi</a>
+                                <a href="#" title="View Wi-Fi topics">Wi-Fi</a>
                             </li>
                             <li>
-                                <a href ="#" title="View WiMAX">WiMAX</a>
+                                <a href ="#" title="View WiMAX topics">WiMAX</a>
                             </li>
                             <li>
-                                <a href ="#" title=" View LTE">Long-Term Evolution</a>
+                                <a href ="#" title=" View LTE topics">Long-Term Evolution</a>
                             </li>
                             <li>
-                                <a href ="#" title="View Comparison">Conclusion and Comparison</a>
+                                <a href ="#" title="View Summary topics">Conclusion and Comparison</a>
                             </li>
                         </ol>
                         <p>
@@ -91,7 +91,7 @@
                             on these subjects online. These came  together to make up my dissertation.
                         </p>
                         <p>
-                            Finally, I  welcome feedback on the e-learning guide.&nbsp;  Share with me which features you would like to see in the next release. Please  use the
+                            Finally, I  welcome feedback on the e-learning guide.&nbsp;  Share with me which features you would like to see in the next release. Please use the
                             <a href="#" title="contact us">contact page</a>
                             for this.
                         </p>
@@ -107,7 +107,7 @@
                 ?>
             </div>
             <footer class="articleFooter">
-                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p>
+                <p>Created by <a href="#" title="View Author">Keith Amoah</a>, May 2011</p>
             </footer>
         </article>
         <div id="bottom" class="text-center">
