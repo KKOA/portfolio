@@ -1,5 +1,4 @@
 <?php
-
     include('../includes/functions.php');
     require('../includes/config.php');
     $title = 'E-Learning Home';
@@ -19,7 +18,7 @@
     <link rel="stylesheet" href="../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/mystyle.css">
-    
+
 </head>
 <body>
 <div class="wrapper">
@@ -51,7 +50,6 @@
                        </p>
                     </div>
                     <div class="transcript col-sm-6 col-md-7">
-                        
                         <p>
                             My name is Keith Amoah.I graduated from Bournemouth University with a BSc (Hons) in Multimedia Communication Systems.
                         </p>
@@ -98,7 +96,6 @@
                             for this.
                         </p>
                         <p>Have fun  with the e-learning tool and learn a lot!</p>
-
                     </div>
                 </div>
                 <?php
@@ -107,16 +104,11 @@
                     $note .='<li>Flash installed and enabled</li></ul>';
                     $note .='<p>Without these features you will be unable to interact with certain aspects of the pages.</p>';
                     echo createNote($note);
-                
-                    
-                    
-                ?> 
-                  
+                ?>
             </div>
-            <footer class="articleFooter" style="padding:10px 0;">
-                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p> 
-            </footer> 
-            
+            <footer class="articleFooter">
+                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p>
+            </footer>
         </article>
         <div id="bottom" class="text-center">
             <a href="#Top" title="Navigate to top of the current page">
@@ -136,7 +128,6 @@
         if (typeof jQuery == 'undefined') {
             document.write(unescape("%3Cscript src='../js/vendor/jquery-3.2.1.js' type='text/javascript'%3E%3C/script%3E"));
         }
-
     </script>
     <?php /* Load Bootstrap Javascript Library (Require JQuery to Load first) */ ?>
     <!--<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
@@ -144,7 +135,5 @@
     <script src="../js/myscript.js"></script>
     <script src='../js/vendors/modernizr-custom.js'></script>
     <script src='../js/Another.js'></script>
-    
-    
 </body>
 </html>
