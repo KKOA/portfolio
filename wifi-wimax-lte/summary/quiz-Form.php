@@ -21,7 +21,9 @@ $title = 'Quiz';
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/css/mystyle.css">
     <link rel="stylesheet" href="../../styles/css/quiz.css">
-
+    <style>
+        .questions { display: block;}
+    </style>
 </head>
 <body>
 <div class="wrapper">
@@ -50,7 +52,7 @@ $title = 'Quiz';
                 for($qid=0;$qid < count($questions);$qid++)
                 {
                     echo '<div  id="question'.($qid+1).'" class="questions">';
-                    for($j=0;$j < count($questions[$qid]);$j++)
+                    /*for($j=0;$j < count($questions[$qid]);$j++)
                     {
                         if($j == 0) //Question
                         {
@@ -74,8 +76,24 @@ $title = 'Quiz';
 
                             echo  $answerdiv;
                         }
-                     }
-                     echo'</div>';
+                    }*/
+                    $questiondiv = "<div class='question'>";
+                    $questiondiv .= "<h2 style='text-align:center;'>Question ".($qid+1)." out of $totalQuestion</h2>";
+                    $questiondiv .= "<h3>".$questions[$qid]."</h3>";
+                    $questiondiv .= "<input type='hidden' name='question".$qid."_text'  value='".$questions[$qid]."'>";
+                    $questiondiv .= "</div>";
+                    echo $questiondiv;
+                    $NoOfpossibleAnswers = count($possibleAnswers[$qid]);
+                    $answerdiv ="<div class='answers'>";
+                    for($aid=0;$aid < $NoOfpossibleAnswers;$aid++)
+                    {
+                    $answerdiv .= "<input type='radio' name='question".$qid."_answer'  value='".$possibleAnswers[$qid][$aid]."'>";
+                    $answerdiv .=  $possibleAnswers[$qid][$aid].'<br>';
+                    }
+                    $answerdiv .= "</div>";
+
+                    echo  $answerdiv;
+                    echo'</div>';
                 }?>
                 <div class="questions" id="check">
                     <div class="question">
