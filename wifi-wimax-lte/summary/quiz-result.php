@@ -1,11 +1,11 @@
 <?php
 include_once("../../includes/config.php");
-$title = "Quiz"; 
+$title = "Quiz";
 $author;
 $date;
 $keword;
 $summary ='';
-$correctAnswers =0;
+$NoOfcorrectAnswers =0;
 $totalQuestion = 0;
 require_once("../../includes/quizdb.php");
 
@@ -13,40 +13,45 @@ $summary ='';
 for ($i=0; $i <$totalQuestion;$i++)// Rename $i variable
 {
 
-		$msg='';
-		$msg = "<h3>Question ".($i+1)." : ".$_POST['question'.$i.'_text'].'</h3>';
+	$msg='';
+    if(!isset($_POST['question'.$i.'_text']))
+    {
+            header( 'Location: '.SUMMARYFLD.'/quiz.php' ) ;
+            break;
+    }
+    else
+    {
 
-	for($j=0; $j <$totalQuestion; $j++)// Rename $j variable
-	{
+        $msg = "<h3>Question ".($i+1)." : ".$_POST['question'.$i.'_text'].'</h3>';
 
-			if($questions[$j][0] == $_POST['question'.$i.'_text'])// Match questions
-			{
-					if(isset($_POST['question'.$i.'_answer']) AND $questions[$j][2] == $_POST['question'.$i.'_answer'])// check was answered and answer was correct
-					{
-						$msg .="<p><b>Correct</b> - The answer was {$questions[$j][2]}.</p>";
-						$correctAnswers++;
-					}
-					else // answer was wrong
-					{
-						if(!isset($_POST['question'.$i.'_answer']))// Check question was not answered
-						{
-								$msg .="<p><b>You did not answer the question .</b>";
-						}
-						else
-						{
-								$msg .='<p>'.$_POST['question'.$i.'_answer']." is <b>wrong answer</b>.";
-						}
-						$msg .="The answer was {$questions[$j][2]}.</p>";
-					}
-			}
-	}
-
-	$msg .= '</p>';
-	$summary .= $msg;
+        //change in code
+        if($questions[$i] == $_POST['question'.$i.'_text'])// Match questions
+        {
+            if(isset($_POST['question'.$i.'_answer']) AND $correctAnswers[$i] == $_POST['question'.$i.'_answer'])// check was answered and answer was correct
+            {
+                $msg .="<p><b>Correct</b> - The answer was {$correctAnswers[$i]}.</p>";
+                $NoOfcorrectAnswers++;
+            }
+            else
+            {
+                if(!isset($_POST['question'.$i.'_answer']))// Check question was not answered
+                {
+                        $msg .="<p><b>You did not answer the question .</b>";
+                }
+                else
+                {
+                        $msg .='<p>'.$_POST['question'.$i.'_answer']." is <b>wrong answer</b>.";
+                }
+                $msg .="The answer was {$correctAnswers[$i]}.</p>";
+            }
+        }
+        //end of change
+        $msg .= '</p>';
+        $summary .= $msg;
+    }
 }
 
 $title = 'Quiz Result';
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,7 +68,7 @@ $title = 'Quiz Result';
     <link rel="stylesheet" href="../../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/css/mystyle.css">
-    
+
 </head>
 <body>
 <div class="wrapper">
@@ -80,22 +85,19 @@ $title = 'Quiz Result';
         <article>
             <div class="articleBody">
                 <h1>Quiz Result</h1>
-                
-                <p> You have finished the quiz and got <b><?=$correctAnswers;?></b> out of <b><?=$totalQuestion?></b> questions correct.</p>
-            <h2>Result Breakdown</h2>
-            <div id="x">
-                <?=$summary ?>
-            </div>  
-            
-            <p><a href="quiz.php">Back to Quiz</a></p>
-			
-                
-                  
+
+                <p> You have finished the quiz and got <b><?=$NoOfcorrectAnswers;?></b> out of <b><?=$totalQuestion?></b> questions correct.</p>
+                    <h2>Result Breakdown</h2>
+                <div id="x">
+                    <?=$summary ?>
+                </div>
+                <p><a href="quiz.php">Back to Quiz</a></p>
+
             </div>
             <footer class="articleFooter" style="padding:10px 0;">
-                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p> 
-            </footer> 
-            
+                <p>Created by <a href="#">Keith Amoah</a>, May 2011</p>
+            </footer>
+
         </article>
         <div id="bottom" class="text-center">
             <a href="#Top" title="Navigate to top of the current page">
@@ -122,6 +124,6 @@ $title = 'Quiz Result';
     <script src="../../js/vendors/bootstrap.min.js"></script>
     <script src="../../js/myscript.js"></script>
     <script src='../../js/vendors/modernizr-custom.js'></script>
-    
+
 </body>
 </html>
