@@ -43,7 +43,7 @@
                 <p><b>(JavaScript enable user Only)</b><br>
                 Only one question will appear at any time.Use next button and previous button to navigate the quiz.</p>
 
-                <div id="box" class="shadow">
+                <div id="box" class="shadow2">
                     <a href="quiz-Form.php" id="startQuiz" class="btn btn-default btn-lg">Start Quiz</a>
                 </div>
 
@@ -71,25 +71,25 @@
         if (typeof jQuery == 'undefined') {
             document.write(unescape("%3Cscript src='../../js/vendor/jquery-3.2.1.js' type='text/javascript'%3E%3C/script%3E"));
         }
-
     </script>
     <?php /* Load Bootstrap Javascript Library (Require JQuery to Load first) */ ?>
     <script src="../../js/vendors/bootstrap.min.js"></script>
-    <script src="../../js/myscript.js"></script>
     <script src='../../js/vendors/modernizr-custom.js'></script>
+    <script src="../../js/myscript.js"></script>
     <script>
-        $('article').on('click', '#startQuiz',function(event){
-            event.preventDefault();
+        $('article').on('click', '#startQuiz',function(event)
+        {
+            event.preventDefault();// stop hyper link
             $.ajax('quiz-Form-Ajax.php',{
-                success : function(response){
-
+                success : function(response)
+                {
                    $('article').find('#box').find('.img-responsive').fadeOut(800,function(){
-                       $('div#box').css('background-color','transparent');
-                       $('div#box').css('border','none');
-                       $('article').find('#box').html(response).fadeIn(8000);
-                       $('.questions').css('border','none');
+                    loadJS('../../js/question.js');
+                    $('#box').css('background-color','transparent');
+                    $('#box').css('border','none');
+                    $('article').find('#box').html(response).fadeIn(8000);
+                    $('.questions').css('border','none');
                    });
-
                 },
                 error: function(request, errorType, errorMessage)
                 {
@@ -98,22 +98,81 @@
                     $('article').find('#box').find('.img-responsive').fadeOut(800,function(){
                         $('article').find('#box').html(message).fadeIn(8000);
                     });
-
-
                 },
-                beforeSend: function(){
+                beforeSend: function()
+                {
                     $('article').find('#box > a').hide();
-                    let =loading ='<div class="img-responsive">';
+                    let loading ='<div class="img-responsive">';
                     loading += '<img src="../../imgs/spinner.gif">';
                     loading +='</div>';
-                    $('article').find('#box').append(loading);
+                    $('article').find('#box').append(loading); // Add spinner to end #box
+                }
+           }); // End of Ajax
+        });
+
+        myAnswer =[];
+        $('article').on('click', '#quizForm #submit',function(event)
+        {
+            event.preventDefault();
+            $('.articleBody').fadeOut(700,function()
+            {
+                let summary = '';
+                let noOfCorrectAnswers = 0;
+                let noofquestions = correctAnswers.length;
+
+                $('.answers').each(function()// Loop through answers divs
+                {
+                    $counter = 1;
+                    NoOfAnswers = $(this).find('input').length;// Return number possible answer
+                    $(this).find('input').each(function() //loop through each input field
+                    {
+                        if($(this).is(':checked'))// Check if radio box was selected
+                        {
+                            myAnswer.push($(this).val());// Add My selected answer to the array
+                            return false;//Break out of each
+                        }
+                        if($counter == NoOfAnswers)
+                        {
+                            myAnswer.push(''); // Add empty string to the array
+                            $counter = 0;// reset counter
+                            return false; //Break out of each
+                        }
+                        $counter++;// increment counter
+                    });
+                });
+
+
+                for(let i = 0;i < noofquestions; i++)
+                {
+                    summary +="<h2>Question "+[i+1]+": "+questions[i]+"</h2>";
+                    if(myAnswer[i]==correctAnswers[i]) // Check answer selected was right
+                    {
+                        summary +="<p>Correct, the answer was "+correctAnswers[i]+".</p>";
+                        noOfCorrectAnswers++;// increment counter for correct answers
+                    }
+                    else if(myAnswer[i]== '') //Check no answer was selected
+                    {
+                        summary +="<p>You did not answer the question .The answer was "+correctAnswers[i]+".</p>";
+                    }
+                    else //Selected answer was wrong
+                    {
+                        summary +="<p>"+myAnswer[i]+" is the wrong answer. The answer was "+correctAnswers[i]+".</p>";
+                    }
                 }
 
 
-           });
+                summary = '<p>You have finished the quiz and got '+noOfCorrectAnswers+' out of '+noofquestions+' questions correct.</p>' + summary;
+                summary = '<h1> Quiz Result</h1>'+summary;
+
+                $('.articleBody').html(summary);
+                $('.articleBody').fadeIn(800);
+
+                $('.articleBody').append('<a href="quiz.php">Back to Quiz</a>'); // Add Back link
+            });
         });
     </script>
     <script src='../../js/Another.js'></script>
+
 
 
 </body>
