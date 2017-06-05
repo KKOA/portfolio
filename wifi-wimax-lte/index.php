@@ -15,6 +15,7 @@
     <!--<link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.css">-->
     <link rel="stylesheet" href="../styles/css/vendors/bootstrap/app.css">
     <!--<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="../styles/css/mystyle.css">
@@ -132,6 +133,7 @@
     <?php /* Load Bootstrap Javascript Library (Require JQuery to Load first) */ ?>
     <!--<script src="bootstrap-3.3.7-dist/js/bootstrap.js"></script>-->
     <script src="../js/vendors/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="../js/myscript.js"></script>
     <script src='../js/vendors/modernizr-custom.js'></script>
     <script src='../js/Another.js'></script>

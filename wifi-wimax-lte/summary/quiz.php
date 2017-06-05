@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="../../styles/css/vendors/bootstrap/app.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
     <link rel="stylesheet" href="../../styles/css/vendors/font-awesome/font-awesome.css">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link rel="stylesheet" href="../../styles/css/mystyle.css">
@@ -48,7 +49,7 @@
                 </div>
 
             </div>
-            <footer class="articleFooter" style="padding:10px 0;">
+            <footer class="articleFooter">
                 <p>Created by <a href="#">Keith Amoah</a>, May 2011</p>
             </footer>
 
@@ -74,6 +75,7 @@
     </script>
     <?php /* Load Bootstrap Javascript Library (Require JQuery to Load first) */ ?>
     <script src="../../js/vendors/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src='../../js/vendors/modernizr-custom.js'></script>
     <script src="../../js/myscript.js"></script>
     <script>
