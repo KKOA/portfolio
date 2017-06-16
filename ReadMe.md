@@ -6,7 +6,9 @@ Note
 
 Because dropdown menu relies on JavaScript, you won't be able to navigate to quiz page from main navigation if you have JavaScript disabled or switch off.
 
-Do not change file structure as this will break the code. The files rely on the constant in “config.php” for file locations.
+By default, this project expects that the files are stored in a folder called 'portfolio-15-05-2017' in the root directory of your web server.
+
+Any changes to the directory need to reflect changes to the config.php in the 'includes' directory. The is because the files rely on the constant in “config.php” for the file locations.
 
 Quiz Directory
 
